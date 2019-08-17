@@ -8,7 +8,6 @@ import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css';
 import './Navbar.css';
 
-
 class NavBar extends Component{
     constructor(props){
         super(props)
@@ -33,7 +32,6 @@ render(){
             <div className="logo">
                 <a href="#">reactcolorpicker</a> 
             </div>
-
             <div className="select-container">
                 <Select value={format} 
                         onChange={this.handleFormatChange}
