@@ -10,7 +10,7 @@ class Palette extends Component{
         this.changeLevel = this.changeLevel.bind(this);
         this.changeFormat = this.changeFormat.bind(this);
     }
-
+    
     changeLevel(level){
         this.setState({level});
     }
