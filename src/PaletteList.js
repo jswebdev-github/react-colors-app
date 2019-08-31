@@ -6,7 +6,7 @@ import {withStyles} from '@material-ui/styles';
 const styles = {
     root:{
         backgroundColor:"blue",
-        height:"100%",
+        height:"100vh",
         display:"flex",
         alignItems:"flex-start",
         justifyContent:"center",
@@ -17,7 +17,7 @@ const styles = {
         display:"flex",
         alignItems:"flex-start",
         flexDirection:"column",
-        flexWrap:"wrap",
+        flexWrap:"wrap"
     },
     nav:{
         display:"flex",
