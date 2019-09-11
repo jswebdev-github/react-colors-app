@@ -25,6 +25,11 @@ class App extends Component{
   path="/palette/:id" 
   render={(routeProps) => <Palette palette={generatePalette(this.findPalette(routeProps.match.params.id))}/>}
 />
+<Route
+exact
+path="/palette/:paletteId/:colorId"
+render={() => <h1>Single Color Page</h1>} 
+/>
 </Switch>
     );
   }
@@ -33,10 +38,3 @@ class App extends Component{
 export default App;
 
 
-/* <Switch>
-<Route exact path="/" render={() => <h1>Palette list goes here</h1>}/>
-<Route exact path="/palette/:id" render={() => <h1>Individual Palette</h1>}/>
-</Switch> */
-// <div>
-//  <Palette palette={generatePalette(seedColors[4])}/>
-// </div>
