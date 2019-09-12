@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import ColorBox from './ColorBox';
 import Navbar from './Navbar';
 import './Palette.css';
+import PaletteFooter from './PaletteFooter';
 
 class Palette extends Component{
     constructor(props){
@@ -30,6 +31,7 @@ class Palette extends Component{
              id={color.id}
              paletteId={id}
              showLink
+             showingAllColors
              />
         });
 
@@ -42,10 +44,7 @@ class Palette extends Component{
                 {colorBoxes}
             </div>
             {/* Footer goes here */}
-            <footer className="Palette-footer">
-            {paletteName}
-            <span className="Palette-emoji">{emoji}</span>
-            </footer>
+            <PaletteFooter paletteName={paletteName} emoji={emoji}/>
         </div>
         );
     }

@@ -26,13 +26,14 @@ class NavBar extends Component{
     }
 
 render(){
-    const {level, changeLevel} = this.props;
+    const {level, changeLevel,showingAllColors} = this.props;
     const {format, open }= this.state;
     return (
         <header className="navbar">
             <div className="logo">
                 <Link to='/'>reactcolorpicker</Link>
             </div>
+            
             <div className="select-container">
                 <Select value={format} 
                         onChange={this.handleFormatChange}
@@ -42,7 +43,7 @@ render(){
                 <MenuItem value='rgba'>RGBA - rgba(255,255,255,1.0)</MenuItem>
                 </Select>
             </div>
-
+            {showingAllColors &&
             <div className="slider-container">
             <div className="slider">
             <Slider defaultValue={level} 
@@ -53,6 +54,7 @@ render(){
             </div>
             <span>Level:{level}</span>    
             </div>
+            }
 
             <Snackbar 
             anchorOrigin={{vertical:"bottom",horizontal:"left"}}
