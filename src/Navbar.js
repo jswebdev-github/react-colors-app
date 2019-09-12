@@ -26,7 +26,7 @@ class NavBar extends Component{
     }
 
 render(){
-    const {level, changeLevel,showingAllColors} = this.props;
+    const {level,changeLevel,showingAllColors} = this.props;
     const {format, open }= this.state;
     return (
         <header className="navbar">
@@ -55,7 +55,7 @@ render(){
             <span>Level:{level}</span>    
             </div>
             }
-
+            
             <Snackbar 
             anchorOrigin={{vertical:"bottom",horizontal:"left"}}
             open={open}
