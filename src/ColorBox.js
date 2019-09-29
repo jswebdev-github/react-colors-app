@@ -9,7 +9,7 @@ import {withStyles} from '@material-ui/styles';
 const styles ={
     ColorBox:{
         width: "20%",
-        height: "25%",
+        height: props => props.showingFullPalette ? "25%":"50%",
         margin: "0 auto",
         display: "inline-block",
         position:"relative",
@@ -76,10 +76,9 @@ class ColorBox extends Component{
     }
 
     render(){
-        const {name, background,paletteId,id, showLink, classes } = this.props;
+        const {name, background,paletteId,id, showingFullPalette, classes } = this.props;
         const {copied} = this.state;
-        const isDarkColor = chroma(background).luminance() <= 0.08;
-        const isLightColor = chroma(background).luminance() >= 0.07;
+
         return (
             <CopyToClipboard text={background} onCopy={this.changeCopyState}>
                 <div style={{background}} className="ColorBox">
@@ -96,7 +95,7 @@ class ColorBox extends Component{
                     </div>
                     <button className={classes.copyButton}>copy</button>
                 </div>
-                {showLink && 
+                {showingFullPalette && 
                 <Link 
                 to={`/palette/${paletteId}/${id}`} 
                 onClick={e => e.stopPropagation()}
